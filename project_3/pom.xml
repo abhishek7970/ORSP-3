@@ -19,6 +19,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!-- ✅ Repositories -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
     <!-- ✅ Dependencies -->
     <dependencies>
 
@@ -108,11 +117,18 @@
 
     </dependencies>
 
-    <!-- ✅ Build plugins (THIS WAS THE MAIN ISSUE) -->
+    <!-- ✅ Build plugins -->
     <build>
         <finalName>project_3</finalName>
 
         <plugins>
+
+            <!-- Clean plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
 
             <!-- Compiler plugin -->
             <plugin>
